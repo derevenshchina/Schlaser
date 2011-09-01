@@ -1,0 +1,58 @@
+# Exclude pdfs #
+################
+# this is for LaTeX and matlab plots
+# to override this either do something like
+# !foo.pdf
+# or 
+# git add -f foo.pdf
+# *.pdf
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.tgz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# LaTeX excludes #
+##################
+*.tex.backup
+*.nav
+*.snm
+*.tex~
+
+# backup files #
+################
+*~
+
+# video files #
+###############
+*.mov
+
