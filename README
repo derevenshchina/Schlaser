@@ -1,19 +1,23 @@
 README
+version 0.0.0
 
 AUTHORS
 E. Kent Golding -- golding.kent@gmail.com
 Simon Saaz -- saaz.simon@gmail.com
 
 NEWS
+21-Sept-2011:
+   Not much (really any) code is being written right now. The current focus is 
+   on building tools and templates, gathering information, and developing 
+   requirements and desirements. 
 
 CHANGE LOG
 
 BUGS
-Application doesn't do anything useful. 
-
-NEWS
+Application doesn't do anything. 
 
 LICENSE
 1) Need to decide on a license
 
 INSTALL
+
