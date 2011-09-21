@@ -1,0 +1,4 @@
+When starting to work on a new feature, branch off from the _develop_ branch.
+
+$ git checkout -b myfeature develop
+Switched to a new branch "myfeature"
