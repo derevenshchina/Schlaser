@@ -47,6 +47,10 @@ Thumbs.db
 *.nav
 *.snm
 *.tex~
+*.log
+*.out
+*.aux
+vc.tex
 
 # backup files #
 ################

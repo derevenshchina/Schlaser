@@ -1,0 +1,79 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{graphics}
+\graphicspath{{./image/}}
+
+\usepackage{fullpage}
+
+\usepackage[pdftex,
+     pdfauthor={E. Kent Golding},
+     pdfkeywords={coverpage, template},
+     colorlinks=true,
+     linkcolor=black,
+     citecolor=black,
+     urlcolor=black,
+     % pdfstartview=FitV,
+     pdftitle={\jobname}]{hyperref}
+
+\usepackage[small]{caption}
+\usepackage{xcolor}
+\usepackage{subfig}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{16.25pt}
+\setlength{\headsep}{10pt}
+\setlength\parindent{0pt}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\input{vc.tex}
+
+%% Watermark
+% \usepackage{graphicx,type1cm,eso-pic,color}
+% 
+% \makeatletter
+%   \AddToShipoutPicture{
+%      \setlength{\@tempdimb}{.5\paperwidth}
+%      \setlength{\@tempdimc}{.5\paperheight}
+%      \setlength{\unitlength}{1pt}
+%        \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){
+%      \makebox(0,0){\rotatebox{55}{\textcolor[gray]{0.85}
+%    {\fontsize{4.5cm}{4.5cm}\selectfont{\color{gray!15}{DRAFT}}}}}
+%  }
+% }
+% \makeatother
+% End of watermark,
+
+\begin{document}
+
+%% COVER PAGE
+%
+\clearpage
+\pagestyle{fancy}
+%\setcounter{page}{0}
+\fancyhead[L]{\textsc{\begin{Large}Schlaser\end{Large}}}
+\fancyfoot[C]{ }
+%\fancyfoot[L]{\color{gray}{Schlaser Memo}}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\vspace*{9pt}
+\begin{center}
+\begin{large}
+\begin{tabular}{|p{1.25in}|p{4.15in}|}
+  \hline
+  \textbf{Title} & How-to Generate a New Document \\ 
+  \textbf{Memo No.} & 000  \\
+  \textbf{Author} & \GITAuthorName \\
+  \textbf{Email} & \GITAuthorEmail \\
+  \textbf{Date} & \GITAuthorDate \\
+  \textbf{Git Rev} & \GITAbrHash \\
+  \textbf{Git Tag} & \GITTag \\
+  \hline
+\end{tabular}
+\end{large}
+\end{center}
+%\HRule
+
+
+\end{document}
