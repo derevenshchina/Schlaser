@@ -2,9 +2,8 @@
 
 \usepackage{graphics}
 \graphicspath{{./image/}}
-
 \usepackage{fullpage}
-
+\usepackage[mmddyyyy]{datetime}
 \usepackage[pdftex,
      pdfauthor={E. Kent Golding},
      pdfkeywords={coverpage, template},
@@ -18,7 +17,6 @@
 \usepackage[small]{caption}
 \usepackage{xcolor}
 \usepackage{subfig}
-
 \usepackage{fancyhdr}
 \setlength{\headheight}{16.25pt}
 \setlength{\headsep}{10pt}
@@ -49,31 +47,35 @@
 %
 \clearpage
 \pagestyle{fancy}
-%\setcounter{page}{0}
+\setcounter{page}{0}
 \fancyhead[L]{\textsc{\begin{Large}Schlaser\end{Large}}}
 \fancyfoot[C]{ }
-%\fancyfoot[L]{\color{gray}{Schlaser Memo}}
-\fancyfoot[R]{\thepage}
+%\fancyfoot[L]{\color{red}{\textit{DRAFT -- built \today -- \currenttime}}}
+\fancyfoot[R]{ }
 \renewcommand{\headrulewidth}{0.8pt}
 \renewcommand{\footrulewidth}{0pt}
 
 \vspace*{9pt}
 \begin{center}
-\begin{large}
+\begin{normalsize}
 \begin{tabular}{|p{1.25in}|p{4.15in}|}
   \hline
   \textbf{Title} & How-to Generate a New Document \\ 
   \textbf{Memo No.} & 000  \\
+  \textbf{Built} & \today\ at \currenttime \\
   \textbf{Author} & \GITAuthorName \\
   \textbf{Email} & \GITAuthorEmail \\
-  \textbf{Date} & \GITAuthorDate \\
+  \textbf{Git Date} & \GITAuthorDate \\
   \textbf{Git Rev} & \GITAbrHash \\
   \textbf{Git Tag} & \GITTag \\
   \hline
 \end{tabular}
-\end{large}
+\end{normalsize}
 \end{center}
-%\HRule
 
+\newpage
+\fancyfoot[R]{\thepage}
+\section*{How-to Generate a New Document}
+Each document lives in its own subdirectory within the \texttt{docs} directory. In the \texttt{docs} dir there is a script named \texttt{setup-new-doc}. When you run that script it creates the subdirectory and populates it with several files that aide in putting Git meta information on the coverpage and the \texttt{.gitignore} file. After running the script don't forget to update the Master Document List!
 
 \end{document}

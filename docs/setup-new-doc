@@ -20,4 +20,5 @@ else
    ln -s vc-git.awk ${NAME}/.
    ln -s .gitignore ${NAME}/.
    touch ${NAME}/${NAME}.tex
+   echo "Don't forget to update the Master Document List"
 endif
