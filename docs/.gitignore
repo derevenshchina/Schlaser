@@ -1,0 +1,7 @@
+# Ignore PDFs #
+*.pdf
+
+vc
+vc-git.awk
+*/vc
+*/vc-git.awk
