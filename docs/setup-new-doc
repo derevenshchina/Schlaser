@@ -1,0 +1,23 @@
+#!/bin/tcsh
+
+# Author -- E. Kent Golding
+
+if ( $#argv < 1) then
+   echo 'Usage: setup-new-doc <filename>'
+   echo 'Example: setup-new-doc 000-howto-gen'
+   exit 1
+endif
+
+set NAME = $argv[1]
+shift argv
+
+if ( -d ${NAME} ) then
+   echo "Directory already exists\nCheck things over and try again."
+   exit 1
+else
+   mkdir ${NAME}
+   ln -s vc ${NAME}/.
+   ln -s vc-git.awk ${NAME}/.
+   ln -s .gitignore ${NAME}/.
+   touch ${NAME}/${NAME}.tex
+endif
