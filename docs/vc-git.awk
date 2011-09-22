@@ -1,0 +1,1 @@
+../tools/vc-git.awk
