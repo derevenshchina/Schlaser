@@ -1,0 +1,146 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{graphics}
+\graphicspath{{./image/}}
+\usepackage{fullpage}
+\usepackage[mmddyyyy]{datetime}
+\usepackage[pdftex,
+     pdfauthor={E. Kent Golding},
+     pdfkeywords={Schlaser, Feature list},
+     colorlinks=true,
+     linkcolor=black,
+     citecolor=black,
+     urlcolor=blue,
+     % pdfstartview=FitV,
+     pdftitle={\jobname}]{hyperref}
+
+\usepackage[small]{caption}
+\usepackage{xcolor}
+\usepackage{subfig}
+\usepackage{fancyhdr}
+\setlength{\headheight}{16.25pt}
+\setlength{\headsep}{10pt}
+\setlength\parindent{0pt}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\input{vc.tex}
+
+%% Watermark
+% \usepackage{graphicx,type1cm,eso-pic,color}
+% 
+% \makeatletter
+%   \AddToShipoutPicture{
+%      \setlength{\@tempdimb}{.5\paperwidth}
+%      \setlength{\@tempdimc}{.5\paperheight}
+%      \setlength{\unitlength}{1pt}
+%        \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){
+%      \makebox(0,0){\rotatebox{55}{\textcolor[gray]{0.85}
+%    {\fontsize{4.5cm}{4.5cm}\selectfont{\color{gray!15}{DRAFT}}}}}
+%  }
+% }
+% \makeatother
+% End of watermark,
+
+\begin{document}
+
+%% COVER PAGE
+%
+\clearpage
+\pagestyle{fancy}
+\setcounter{page}{0}
+\fancyhead[L]{\textsc{\begin{Large}Schlaser\end{Large}}}
+\fancyfoot[C]{ }
+\fancyfoot[L]{\color{red}{\textit{DRAFT -- built \today -- \currenttime}}}
+\fancyfoot[R]{ }
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\vspace*{9pt}
+\begin{center}
+\begin{normalsize}
+\begin{tabular}{|p{1.25in}|p{4.15in}|}
+  \hline
+  \textbf{Title} & Feature List \\ 
+  \textbf{Memo No.} & 001  \\
+  \textbf{Built} & \today\ at \currenttime \\
+  \textbf{Author} & \GITAuthorName \\
+  \textbf{Email} & \GITAuthorEmail \\
+  \textbf{Git Date} & \GITAuthorDate \\
+  \textbf{Git Rev} & \GITAbrHash \\
+  \textbf{Git Tag} & \GITTag \\
+  \hline
+\end{tabular}
+\end{normalsize}
+\end{center}
+\vfill
+\href{../Master-Document-List.pdf}{Master Document List}
+
+\newpage
+\fancyfoot[R]{\thepage}
+\fancyhead[R]{\jobname}
+\section*{Features}
+\subsection*{Strike Temperatures}
+\subsubsection*{Inputs}
+\begin{itemize}
+ \item Amount of Grains
+ \item Grain Temperature
+ \item Amount of Strike Water
+ \item Target Mash Temperature
+ \item Equipment Loss \textit{**Optional**}
+\end{itemize}
+\subsubsection*{Outputs}
+\begin{itemize}
+ \item Stike Water Temperature
+\end{itemize}
+
+\subsubsection*{Equations}
+\begin{equation}
+Aa + Bb = Cc
+\end{equation}
+
+
+\subsubsection*{References}
+\href{http://brewingtechniques.com/library/backissues/issue4.5/miller.html}{Brewing Techniques - Troubleshooter Vol 4, No 5} \newline
+See Appendix \ref{ap:SWT}
+
+
+\subsection*{Water Amounts}
+
+\section{Appendix}
+\subsection{Strike Water Temp\label{ap:SWT}}
+Q: My mash tun is a picnic cooler, so I am limited to infusion and decoction mashing. I was wondering if there is an equation that I can use to calculate the water volume and temperature necessary to raise the mash temperature a fixed number of degrees. I am looking for a formula that uses the amount of grain, the desired mash temperature, and the current mash temperature as the known quantities, and the volume and temperature of the additional water (or mash removed, in the case of decoction mashing) as the variables.
+
+A: There is a way of calculating the numbers you want, but you have to choose one or the other - volume or temperature. When you decide how hot the water will be, you can then calculate the amount to be added to raise the mash a specific number of degrees. It's trickier to calculate a decoction, because it is hard to determine the specific heat of the decoction. In general, you try to pull the stiffest portion of the mash for the decoction, but you can't separate the water from the grist to determine the exact proportions.
+
+I learned the following basic formula for figuring the temperature of a mixture from Dan Carey in a talk he gave at the 1988 AHA conference: \newline
+Aa + Bb = Cc \newline
+The capital letters A, B, and C stand for the specific heats of grain, water, and the mash, respectively, and the lower case letters stand for temperatures of the same variables. What the formula says is that the product of the temperature and specific heat of a mixture will be equal to the sum of the products of the specific heat and temperature of the two substances that make up the mixture - in this case, water and grist.
+
+I use this formula to calculate the strike temperature of my water for making a mash. For example, suppose my recipe calls for 825 lb of malt, and I want to use 285 gal of water to make up the mash, which should have a temperature of 153$^\circ$F (67$^\circ$C). To avoid a lot of extra calculations, I assign a value - 1 - to the specific heat of 1 gal of water. I assign the correct relative value - 0.05 - to the specific heat of 1 lb of grain (0.05 is correct for barley malt; it may not be exactly right for flakes, but it's close enough). If I then measure the temperature of the grain as 70$^\circ$F (21$^\circ$C), for example, I can calculate the correct strike temperature for the water.
+
+First, I calculate the specific heat of the grain (A): 825 X 0.05, or 41.25. The specific heat of the water (B) is 285. And the specific heat of the mash (C) will be the sum of those two, or 326.25. The temperature of the grain (a) is 70$^\circ$F (21$^\circ$C), the temperature of the mash (c) should be 153$^\circ$F (67$^\circ$C), and the temperature of the strike water (b) is the unknown.
+
+To solve for b, we simply work out the calculations:
+
+Aa = 41.25 X 70 = 2887.5
+Cc = 326.25 X 153 = 49916.25
+Bb = 285b
+2887.5 + 285b = 49916.25
+285b = 49916.25 - 2887.5 = 47028.75
+b = 47028.75/285 = 165.013$^\circ$F ($\sim$74$^\circ$C)
+
+You can use the same formula to calculate the effect of adding hot water, or a boiling decoction, to an existing mash. Just multiply the specific heat by the temperature of the existing mash and use for Aa. As I mentioned before, the only problem is knowing the amount of grist and water in your decoction so you can get an accurate figure. In practice, you will have to learn by trial and error how big a decoction is needed for a desired temperature rise.
+
+In fact, even for calculating the strike temperature of an infusion mash, the formula is not the last word. Real mashes take place inside a mash tun, and the mash tun, unless you preheat it, will absorb heat and lower the temperature of the mash considerably below its calculated value.
+
+You can compensate for this heat loss, however. For home brewers using a mash tun that cannot be exposed to heat, such as your picnic cooler, I suggest making some test runs to determine how much heat the walls of the vessel absorb. Make up a quantity of water at your usual mash temperature, with a specific heat equal to that of your average mash. For example, a 5-gal batch using 8 lb of malt would have a specific heat of (5 X 1) + (8 X 0.05) = 5.4. Therefore, you'd use 5.4 gal of water heated to, say, 153$^\circ$F (67$^\circ$C) for the test run. Put this in your mash tun and let it stand, covered, for 5 minutes. Stir well. Then check the temperature. Most of the drop during the first few minutes will be from heat losses to the cold walls and bottom of the mash tun.
+
+The easiest way to deal with heat absorption by the mash tun is to determine the heat loss in this way, then use mash water that has been overheated to compensate. For example, you need 165$^\circ$F (74$^\circ$C) mash water to make a 153$^\circ$F (67$^\circ$C) mash. But your mash tun, you discover, will soak up about 5$^\circ$F (3$^\circ$C) in the first few minutes. This means you need to use 170$^\circ$F (77$^\circ$C) water, and let it sit in the mash tun for 5 minutes before adding your grain.
+
+As an alternative, you can preheat your mash tun with superheated water, which you then return to your kettle and use for mashing in. This is the way we do it at my brewpub. We pump 12 bbl of very hot (190$^\circ$F [88$^\circ$C]) water into the mash tun, then return it to the hot liquor tank before mashing in. This enables us to use a strike temperature close to the theoretical value calculated by the Aa + Bb = Cc formula. If we didn't preheat, we would have to use a strike temperature about 10$^\circ$F (6$^\circ$C) higher than that.
+
+Why is it worth bothering with preheating? Mainly because I am scared to death of scalding the malt enzymes. Our grist is mixed with hot water as it falls into the mash tun. When you are making up a mash with 800 lb of grain and 9 bbl of water, this type of mixing is a lot easier than bringing in the water and then stirring the grain in by hand. (Of course, if we had motor-driven rakes . . .) And if we did not preheat the mash tun, we would have to use a strike temperature that would make a mash hot enough to scald the amylase enzymes, especially the beta-amylase, which cannot survive very long at temperatures in the high 150s$^\circ$F (68-70$^\circ$C). No matter how hard we stirred, it would take 10 minutes or so for the superheated mash to settle into the desired temperature, and during that time a lot of beta-amylase would be lost.
+
+I guess you can see that this all boils down to a trade-off. I don't want to kill enzymes, and I don't want to stir the mash any more than I have to. We also have large seasonal variations in ambient temperature, a problem solved by preheating. So I spend half an hour preheating the mash tun. For home brewers, I don't think this is necessary. You can just bring the hot water into the mash tun and let it settle down before you stir in the crushed malt.
+
+\end{document}
