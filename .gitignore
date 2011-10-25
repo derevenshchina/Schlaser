@@ -55,6 +55,7 @@ vc.tex
 # backup files #
 ################
 *~
+*.swp
 
 # video files #
 ###############
