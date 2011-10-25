@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=schlaser
+GenericName=beer brewing calculators
+Comment=calculators to aid in beer making
+Icon=beer
+Exec=schlaser
+Terminal=false
+Catefories=Accessories;
