@@ -66,12 +66,12 @@ void init_ui(int argc, char **argv)
    gtk_container_add(GTK_CONTAINER(window),frame);
 
    plus = gtk_button_new_with_label("increase (+)");
-   gtk_widget_set_size_request(plus, 80, 35);
-   gtk_fixed_put(GTK_FIXED(frame), plus, 50, 20);
+   gtk_widget_set_size_request(plus, 90, 35);
+   gtk_fixed_put(GTK_FIXED(frame), plus, 40, 20);
 
    minus = gtk_button_new_with_label("decrease (-)");
-   gtk_widget_set_size_request(minus, 80, 35);
-   gtk_fixed_put(GTK_FIXED(frame), minus, 50, 80);
+   gtk_widget_set_size_request(minus, 90, 35);
+   gtk_fixed_put(GTK_FIXED(frame), minus, 40, 80);
 
    label = gtk_label_new("1337");
    gtk_fixed_put(GTK_FIXED(frame), label, 190, 58);
