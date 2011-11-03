@@ -19,5 +19,10 @@ Application doesn't do anything.
 LICENSE
 1) Need to decide on a license
 
+REQUIRED PACKAGES
+plus dependicies
+- libglib2.0-dev (or equivalent)
+- libgtk2.0-dev (or equivalent)
+- libgconf2-dev (or equivalent)
 INSTALL
 
